@@ -507,7 +507,9 @@ span {
   border: none;
   border-radius: 4px;
 }
-
+.footer-button .icon-frame {
+  margin-left: 16px;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -522,7 +524,6 @@ span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 408px;
   min-height: 584px;
   background-color: #fcfcfc;
@@ -531,6 +532,7 @@ span {
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 72px 24px 24px 24px;
+  transform: translate(-50%, -50%);
 }
 
 .modal .modal-form {
@@ -540,7 +542,7 @@ span {
   display: flex;
   justify-content: end;
 }
-.form-button {
+.modal-container .form-button {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -595,7 +597,6 @@ span {
   background-color: transparent;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .input-modal:focus {
   border-color: #4d5ae5;
@@ -611,7 +612,6 @@ span {
   color: #8e8f99;
   display: block;
   margin-bottom: 4px;
-
 }
 .modal .modal-form .input-group label {
   color: gray;
@@ -645,7 +645,6 @@ span {
   outline: transparent;
   resize: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .modal .modal-form .input-group .input-modal:focus-within {
   border: 1px solid #4d5ae5;
@@ -656,12 +655,9 @@ span {
   top: 50%;
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  
 }
 .modal .modal-form .input-group .input-modal:focus-within .icon {
   fill: #4d5ae5;
-  
 }
 .modal .modal-form .input-group .input-modal input {
   width: 100px;
@@ -686,7 +682,6 @@ span {
   outline: transparent;
   resize: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .modal .modal-form .input-group .input-modal:focus-within .comment-text {
   border-color: #4d5ae5;

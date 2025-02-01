@@ -23,10 +23,10 @@
       <div class="header-div container">
         <nav class="header-nav">
           <div class="logo-container">
-          <a class="logo-one" href="/">
-            Web<span class="logo-two">Studio</span>
-          </a>
-        </div>
+            <a class="logo-one" href="/">
+              Web<span class="logo-two">Studio</span>
+            </a>
+          </div>
           <ul class="nav-ul">
             <li><a href="/" class="nav-links">Studio</a></li>
             <li><a href="" class="nav-links">Portfolio</a></li>
@@ -396,10 +396,10 @@
       <div class="container">
         <div class="footer-div">
           <div class="logo-end">
-          <a class="logo-footer" href="/"
-            >Web <span class="logo-three">Studio</span></a
-          >
-        </div>
+            <a class="logo-footer" href="/"
+              >Web <span class="logo-three">Studio</span></a
+            >
+          </div>
           <p class="footer-p">
             Increase the flow of customers and sales for your business with
             digital marketing &amp; growth solutions.
@@ -461,52 +461,71 @@
       </div>
     </footer>
     <!--son bölüm sonu-->
-<!--modal başlangıcı-->
+    <!--modal başlangıcı-->
     <div class="modal">
-        <div class="modal-container">
-            <div class="close">
-              <button class="form-button" type="button">
-                <svg class="form-close" width="8" height="8">
-                  <use href="./images/icons.svg#icon-close"></use>
+      <div class="modal-container">
+        <div class="close">
+          <button type="button" class="form-button">
+            <svg class="form-close" width="8" height="8">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="modal-title">Leave your contacts and we will call you back</p>
+        <form name="form-area">
+          <div class="modal-form">
+            <div class="input-group">
+              <label for="user-name">Name</label>
+              <div class="input-modal">
+                <svg class="icon">
+                  <use xlink:href="./images/icons.svg#icon-person"></use>
                 </svg>
-              </button>
-      
-          </div>
-              <h3 class="modal-title">Leave your contacts and we will call you back</h3>
-              <form name="form-area">
-                <div class="modal-form">
-              <div class="input-group">
-                <label for="username">Name</label>
-                <div class="input-modal">
-                  <svg class="icon">
-                    <use xlink:href="./images/icons.svg#icon-person"></use>
-                  </svg>
-                  <input type="text" name="username" class="input-label" id="username" />
-                </div>
+                <input
+                  type="text"
+                  name="user-name"
+                  class="input-label"
+                  id="user-name"
+                />
               </div>
-              <div class="input-group">
-                <label for="phone">Phone</label>
-                <div class="input-modal">
-                  <svg class="icon">
-                    <use xlink:href="./images/icons.svg#icon-phone"></use>
-                  </svg>
-                  <input type="text" name="phone" class="input-label" id="phone"/>
-                </div>
+            </div>
+            <div class="input-group">
+              <label for="phone">Phone</label>
+              <div class="input-modal">
+                <svg class="icon">
+                  <use xlink:href="./images/icons.svg#icon-phone"></use>
+                </svg>
+                <input
+                  type="text"
+                  name="phone"
+                  class="input-label"
+                  id="phone"
+                />
               </div>
-              <div class="input-group">
-                <label for="email">E-mail</label>
-                <div class="input-modal">
-                  <svg class="icon">
-                    <use xlink:href="./images/icons.svg#icon-email"></use>
-                  </svg>
-                  <input type="text" name="email" class="input-label" id="email-modal"/>
-                </div>
+            </div>
+            <div class="input-group">
+              <label for="email">E-mail</label>
+              <div class="input-modal">
+                <svg class="icon">
+                  <use xlink:href="./images/icons.svg#icon-email"></use>
+                </svg>
+                <input
+                  type="text"
+                  name="email"
+                  class="input-label"
+                  id="email-modal"
+                />
               </div>
-              <div class="input-group">
-                  <label for="user-comment">Comment</label>
-                  <textarea name="user-comment" id="user-comment" class="comment-text" placeholder="Text Input"></textarea>
-          </div>
-          <div class="form-checkbox">
+            </div>
+            <div class="input-group">
+              <label for="user-comment">Comment</label>
+              <textarea
+                name="user-comment"
+                id="user-comment"
+                class="comment-text"
+                placeholder="Text Input"
+              ></textarea>
+            </div>
+            <div class="form-checkbox">
               <input
                 class="visually-hidden input-check"
                 type="checkbox"
@@ -525,10 +544,10 @@
               </label>
             </div>
           </div>
-            <button class="send-button">Send</button>
+          <button class="send-button">Send</button>
         </form>
       </div>
     </div>
-  <!--modal sonu-->
+    <!--modal sonu-->
   </body>
 </html>
