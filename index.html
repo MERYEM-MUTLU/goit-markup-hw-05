@@ -463,20 +463,25 @@
     <!--son bölüm sonu-->
 <!--modal başlangıcı-->
     <div class="modal">
-        <div class="modal-color"></div>
-        <form name="form-area">
-          <div class="modal-form">
+        <div class="modal-container">
             <div class="close">
-              <span class="close-x">X</span>
+              <button class="form-button" type="button">
+                <svg class="form-close" width="8" height="8">
+                  <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+              </button>
+      
           </div>
               <h3 class="modal-title">Leave your contacts and we will call you back</h3>
+              <form name="form-area">
+                <div class="modal-form">
               <div class="input-group">
                 <label for="username">Name</label>
                 <div class="input-modal">
                   <svg class="icon">
                     <use xlink:href="./images/icons.svg#icon-person"></use>
                   </svg>
-                  <input type="text" name="username" class="username" id="username" />
+                  <input type="text" name="username" class="input-label" id="username" />
                 </div>
               </div>
               <div class="input-group">
@@ -485,7 +490,7 @@
                   <svg class="icon">
                     <use xlink:href="./images/icons.svg#icon-phone"></use>
                   </svg>
-                  <input type="text" name="phone" class="phone" id="phone"/>
+                  <input type="text" name="phone" class="input-label" id="phone"/>
                 </div>
               </div>
               <div class="input-group">
@@ -494,12 +499,12 @@
                   <svg class="icon">
                     <use xlink:href="./images/icons.svg#icon-email"></use>
                   </svg>
-                  <input type="text" name="email" class="email" id="email"  />
+                  <input type="text" name="email" class="input-label" id="email-modal"/>
                 </div>
               </div>
               <div class="input-group">
-                  <label for="comment">Comment</label>
-                  <textarea name="comment" id="comment" class="comment" placeholder="Text Input"></textarea>
+                  <label for="user-comment">Comment</label>
+                  <textarea name="user-comment" id="user-comment" class="comment-text" placeholder="Text Input"></textarea>
           </div>
           <div class="form-checkbox">
               <input
@@ -519,9 +524,11 @@
                 <a class="Policy" href="#">Privacy Policy</a>
               </label>
             </div>
+          </div>
             <button class="send-button">Send</button>
         </form>
       </div>
+    </div>
   <!--modal sonu-->
   </body>
 </html>
