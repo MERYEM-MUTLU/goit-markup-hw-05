@@ -193,10 +193,11 @@ button {
 }
 button:hover {
   background-color: #404bbf;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
 }
 button:focus {
   background-color: #404bbf;
+  border: none;
 }
 .section-two {
   padding: 120px 0;
@@ -530,7 +531,7 @@ span {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-container {
+.modal .modal-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -543,9 +544,11 @@ span {
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 72px 24px 24px 24px;
+  z-index: 101;
+  margin-bottom: 8px;
 }
 
-.modal-container .form-button {
+.modal .modal-container .form-button {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -562,22 +565,22 @@ span {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-container .form-button:hover {
+.modal .modal-container .form-button:hover {
   background-color: #404bbf;
   border: none;
 }
-.modal-container .form-button:focus {
+.modal .modal-container .form-button:focus {
   background-color: #404bbf;
   border: none;
 }
 
-.form-close {
+.modal .modal-container .form-button:hover .form-close {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-container .form-button:hover .form-close {
+.modal .modal-container .form-button:hover .form-close {
   fill: #ffffff;
 }
-.modal-container .form-button:focus .form-close {
+.modal .modal-container .form-button:focus .form-close {
   fill: #ffffff;
 }
 
@@ -592,7 +595,11 @@ span {
 }
 
 .input-group {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  outline: transparent;
 }
 .modal .input-group .label-class {
   font-size: 12px;
@@ -613,11 +620,11 @@ span {
   /* Düzeltme: transition eklendi */
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal .input-group .input-label:focus {
+.modal .modal-container .input-group .input-label:focus {
   border-color: #4d5ae5;
 }
 
-.modal .input-modal .input-icon {
+.modal .modal-container .input-modal .input-icon {
   position: absolute;
   left: 16px;
   top: 50%;
@@ -626,7 +633,7 @@ span {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Bu kısım input-label'a odaklanıldığında doldurma rengi  */
-.modal .input-group .input-modal:focus-within .input-icon {
+.modal .modal-container .input-group .input-modal:focus-within .input-icon {
   fill: #4d5ae5;
 }
 
@@ -665,7 +672,7 @@ span {
   height: 20px;
 }
 /* Textarea düzeltmesi */
-.comment-text {
+.input-group .comment-text {
   width: 100%;
   height: 120px;
   font-size: 12px;
@@ -682,7 +689,7 @@ span {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.comment-text:focus {
+.input-group .comment-text:focus {
   border-color: #4d5ae5;
 }
 /* Bu seçici gereksiz olabilir. .comment-text:focus yeterli.
@@ -753,7 +760,7 @@ span {
   cursor: pointer;
 }
 /* Onay kutusu görseli */
-.form-svg {
+.form-checkbox-group .form-svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -774,7 +781,7 @@ input-label[type="checkbox"]:checked {
   fill: #f4f4fd;
 }
 */
-.input-check:checked + .privacy-label .form-svg {
+.form-checkbox-group .input-check:checked + .privacy-label .form-svg {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
