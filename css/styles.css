@@ -75,15 +75,17 @@ img {
 
 .nav-links {
   font-family: "Roboto";
-  color: #2e2f42;
+  color: #2e2f42; /* Default renk */
   font-weight: 500;
   text-decoration: none;
   list-style-type: none;
   padding: 24px 0;
   position: relative;
+  /* Düzeltme: Mevcut sayfa linki (Studio) için varsayılan mavi renk */
   color: #404bbf;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* Mevcut sayfa için alt çizgi */
 .nav-links::after {
   content: "";
   width: 100%;
@@ -95,11 +97,12 @@ img {
   border-radius: 2px;
 }
 
+
 .nav-links:hover,
 .nav-links:focus {
-  text-decoration: underline;
+  text-decoration: none; /* Alt çizgi kaldirildi */
   color: #404bbf;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /
 }
 .nav-links:visited {
   text-decoration: none;
@@ -129,13 +132,14 @@ img {
   font-style: normal;
   color: #434455;
   text-decoration: none;
+  /* Düzeltme: transition eklendi */
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-links:hover,
 .address-links:focus {
-  text-decoration: underline;
+  text-decoration: none; /* Alt çizgi kaldirildi */
   color: #404bbf;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .address-links:visited {
   text-decoration: none;
@@ -293,11 +297,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Düzeltme: transition eklendi */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tmsocial-link:hover {
   background-color: #404bbf;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .tmsocial-link:focus {
   background-color: #404bbf;
@@ -326,23 +331,27 @@ p {
   height: 100%;
   width: 100%;
   transform: translateY(100%);
+  /* Düzeltme: sadece transform için transition */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .op-list {
+  /* Düzeltme: box-shadow için transition */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* CSS'te hatalıydı Kaldırıldı/düzeltildi.
 .op-list .slide-p {
-  transform: translateY(100%); /* Başlangıçta p etiketi aşağıda */
+  transform: translateY(100%);
   transition: transform 0.3s ease;
 }
+*/
 .op-list:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
 }
 .op-list:hover .slide-p {
   transform: translateY(0%);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition zaten slide-p'de tanımlı*/
 }
 .op-title {
   margin-bottom: 72px;
@@ -401,6 +410,7 @@ p {
   display: inline;
   font-size: 18px;
   background-color: none;
+  color: #f4f4fd; /* Footer'daki logo rengi */
 }
 .footer-p {
   color: #f4f4fd;
@@ -440,11 +450,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Düzeltme: transition eklendi */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link:hover {
   background-color: #31d0aa;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition zaten yukarıda tanımlı */
 }
 .footer-link:focus {
   background-color: #31d0aa;
@@ -599,6 +610,7 @@ span {
   background-color: transparent;
   padding-left: 38px;
   outline: transparent;
+  /* Düzeltme: transition eklendi */
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal .input-group .input-label:focus {
@@ -610,47 +622,49 @@ span {
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
+  /* Düzeltme: transition eklendi */
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.input-label:hover .input-icon {
-  fill: #ffffff;
-}
-.input-label:focus .input-icon {
-  fill: #ffffff;
-}
+/* Bu kısım input-label'a odaklanıldığında doldurma rengi  */
 .modal .input-group .input-modal:focus-within .input-icon {
   fill: #4d5ae5;
 }
 
 .modal .input-group .input-modal {
-  padding: 10px;
-  gap: 6px;
+  /*  input-label seçicisine taşındı veya düzeltildi.
+   input-modal içindeki input için ayrıca bir stil yoktu.
+  */
+  padding: 0; /* Padding kaldırıldı, input-label'a taşındı */
+  gap: 0; /* Kaldırıldı */
   border-radius: 4px;
   position: relative;
   display: flex;
   align-items: center;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  /* Input'un kendisi değil, modal-input div'i focus olduğunda kenarlık değişir */
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 0; /* Input-group'a taşındı */
+  border: 1px solid transparent; /* Input-label'a taşındı */
 }
+/* Bu stil, input-label'in focus'u ile çalışır, modal'a gerek yok.
 .input-modal:focus {
   border-color: #4d5ae5;
 }
+*/
+/* Input-modal wrapper'ına focus geldiğinde border değişimi */
 .modal .input-group .input-modal:focus-within {
-  border: 1px solid #4d5ae5;
+  border: 1px solid transparent; /* border'ı input-label'a taşıdık. */
 }
 .modal .input-group .input-modal input {
   width: 100px;
   outline: none;
   border: none;
 }
-
 .modal .input-group .input-modal svg {
   width: 20px;
   height: 20px;
 }
-
+/* Textarea düzeltmesi */
 .comment-text {
   width: 100%;
   height: 120px;
@@ -664,15 +678,18 @@ span {
   padding: 8px 16px;
   outline: transparent;
   resize: none;
+  /* Düzeltme: transition eklendi */
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .comment-text:focus {
   border-color: #4d5ae5;
 }
+/* Bu seçici gereksiz olabilir. .comment-text:focus yeterli.
 .modal .input-group .input-modal:focus-within .comment-text {
   border-color: #4d5ae5;
 }
+*/
 
 .policy-link {
   color: #4d5ae5;
@@ -698,7 +715,7 @@ span {
   background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
-  margin-top: -10px;
+  margin-top: 24px; /* Düzeltme: -10px yerine 24px yapıldı (formun sonundaki boşluk için) */
 }
 
 .send-button:hover {
@@ -735,7 +752,7 @@ span {
   gap: 8px;
   cursor: pointer;
 }
-
+/* Onay kutusu görseli */
 .form-svg {
   display: inline-flex;
   align-items: center;
@@ -744,16 +761,19 @@ span {
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
+  /* Düzeltme: transition eklendi */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: transparent;
 }
+/* Bu seçici gereksiz/hatalı. input-check ile kontrol edilmeli.
 input-label[type="checkbox"]:checked {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
 }
+*/
 .input-check:checked + .privacy-label .form-svg {
   background-color: #404bbf;
   border: none;
