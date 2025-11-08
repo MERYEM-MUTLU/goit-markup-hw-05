@@ -521,273 +521,252 @@ span {
 .footer-button .icon-frame {
   margin-left: 16px;
 }
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(46, 47, 66, 0.4);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal .modal-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 408px;
-  min-height: 584px;
-  background-color: #fcfcfc;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 72px 24px 24px 24px;
-  z-index: 101;
-  margin-bottom: 16px;
+/* MODAL WINDOW (modal-window) */
+
+.modal-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    /* Gereksinimlere göre: transition: opacity ve visibility */
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal .modal-container .form-button {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e7e9fc;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal .modal-container .form-button:hover {
-  background-color: #404bbf;
-  border: none;
-}
-.modal .modal-container .form-button:focus {
-  background-color: #404bbf;
-  border: none;
+
+/* MODAL CONTAINER (modal-container) */
+
+.modal-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    min-height: 584px;
+    background: #fcfcfc; /* Gereksinim: background */
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 72px 24px 24px 24px;
 }
 
-.modal .modal-container .form-button:hover .form-close {
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal .modal-container .form-button:hover .form-close {
-  fill: #ffffff;
-}
-.modal .modal-container .form-button:focus .form-close {
-  fill: #ffffff;
+
+/* MODAL CLOSE BUTTON (form-close-button) */
+
+.form-close-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal .modal-title {
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  margin-bottom: 16px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
+.form-close-button:hover,
+.form-close-button:focus {
+    background-color: #404bbf;
+    border: none;
 }
 
+/* Kapatma butonu SVG ikonu */
+.form-close-icon {
+    /* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); /* Gereksinim: SVG için transition */
+}
+
+.form-close-button:hover .form-close-icon,
+.form-close-button:focus .form-close-icon {
+    fill: #ffffff; 
+}
+
+/* MODAL TITLE (modal-title) */
+
+.modal-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 16px;
+}
+
+/* FORM INPUT GROUPS */
+
+/* Name, Phone, Email grupları için 8px alt boşluk  */
 .input-group {
-  margin-bottom: 16px;
-  width: 100%;
-  height: 40px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  outline: transparent;
-}
-.modal .input-group .label-class {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-  display: block;
-  margin-bottom: 4px;
-}
-.modal .input-group .input-label {
-  width: 100%;
-  height: 40px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  background-color: transparent;
-  padding-left: 38px;
-  outline: transparent;
-  /* Düzeltme: transition eklendi */
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal .modal-container .input-group .input-label:focus {
-  border-color: #4d5ae5;
+    margin-bottom: 8px;
 }
 
-.modal .modal-container .input-modal .input-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  /* Düzeltme: transition eklendi */
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-/* Bu kısım input-label'a odaklanıldığında doldurma rengi  */
-.modal .modal-container .input-group .input-modal:focus-within .input-icon {
-  fill: #4d5ae5;
+/*  16px alt boşluk (input-group-comment) */
+.input-group-comment {
+    margin-bottom: 16px;
 }
 
-.modal .input-group .input-modal {
-  /*  input-label seçicisine taşındı veya düzeltildi.
-   input-modal içindeki input için ayrıca bir stil yoktu.
-  */
-  padding: 0; /* Padding kaldırıldı, input-label'a taşındı */
-  gap: 0; /* Kaldırıldı */
-  border-radius: 4px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  /* Input'un kendisi değil, modal-input div'i focus olduğunda kenarlık değişir */
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  margin-bottom: 0; /* Input-group'a taşındı */
-  border: 1px solid transparent; /* Input-label'a taşındı */
-}
-/* Bu stil, input-label'in focus'u ile çalışır, modal'a gerek yok.
-.input-modal:focus {
-  border-color: #4d5ae5;
-}
-*/
-/* Input-modal wrapper'ına focus geldiğinde border değişimi */
-.modal .input-group .input-modal:focus-within {
-  border: 1px solid transparent; /* border'ı input-label'a taşıdık. */
-}
-.modal .input-group .input-modal input {
-  width: 100px;
-  outline: none;
-  border: none;
-}
-.modal .input-group .input-modal svg {
-  width: 20px;
-  height: 20px;
-}
-/* Textarea düzeltmesi */
-.input-group .comment-text {
-  width: 100%;
-  height: 120px;
-  margin-bottom: 16px;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: rgba(46, 47, 66, 0.4);
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  background-color: transparent;
-  padding: 8px 16px;
-  outline: transparent;
-  resize: none;
-  /* Düzeltme: transition eklendi */
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+/* LABEL Stilleri */
+.label-class {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: block;
+    margin-bottom: 4px;
 }
 
-.input-group .comment-text:focus {
-  border-color:#4D5AE5;
-}
-/* Bu seçici gereksiz olabilir. .comment-text:focus yeterli.
-.modal .input-group .input-modal:focus-within .comment-text {
-  border-color: #4d5ae5;
-}
-*/
-
-.policy-link {
-  color: #4d5ae5;
-  text-decoration: none;
+/* INPUT MODAL (input ve svg'yi saran div) */
+.input-modal {
+    position: relative;
 }
 
-.policy-link:hover,
-.policy-link:focus {
-  text-decoration: underline;
+/* INPUT Stilleri */
+.input-label {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.send-button {
-  display: block;
-  min-width: 169px;
-  height: 56px;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-  cursor: pointer;
-  background-color: #4d5ae5;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin: 0 auto;
-  margin-top: 24px; /* Düzeltme: -10px yerine 24px yapıldı (formun sonundaki boşluk için) */
+/* Input Focus Stili */
+.input-label:focus {
+    border-color: #4d5ae5;
 }
 
-.send-button:hover {
-  background-color: #404bbf;
-  border: none;
+/* INPUT ICON (SVG) */
+.input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.send-button:focus {
-  background-color: #404bbf;
-  border: none;
+
+/* Input Focus'ta SVG Fill Stili */
+.input-modal:focus-within .input-icon {
+    fill: #4d5ae5;
 }
+
+
+/* TEXTAREA (Comment) */
+
+.comment-text {
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Textarea Focus Stili */
+.comment-text:focus {
+    border-color: #4d5ae5;
+}
+
+/* PRIVACY CHECKBOX */
 
 .form-checkbox-group {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 
+/* Görsel Olarak Gizleme Sınıfı */
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-}
-.privacy-label {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-/* Onay kutusu görseli */
-.form-checkbox-group .form-svg {
-  display: inline-flex;
-  width: 16px;
-  height: 16px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 2px;
-  /* Düzeltme: transition eklendi */
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  align-items: center;
-  justify-content: center;
-  fill: transparent;
-}
-/* Bu seçici gereksiz/hatalı. input-check ile kontrol edilmeli.
-input-label[type="checkbox"]:checked {
-  background-color: #404bbf;
-  border: none;
-  fill: #f4f4fd;
-}
-*/
-.input-check:checked + .privacy-label .form-svg .check-svg {
-  background-color: #404bbf;
-  border: none;
-  fill: #f4f4fd;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
 }
 
-.is-open {
-  display: none;
+.privacy-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Span ile metin arasına boşluk */
+    cursor: pointer;
+}
+
+/* Onay Kutusu Görseli (SPAN) */
+.form-svg-wrapper {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Checkbox Checked Durumu */
+.input-check:checked + .privacy-label .form-svg-wrapper {
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd; /* SVG ikonu için fill rengi */
+}
+
+/* Gizlilik Politikası Linki */
+.policy-link {
+    color: #4d5ae5;
+}
+
+/* SEND BUTTON (send-button) */
+
+.send-button {
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4d5ae5;
+    border: none; /* Gereksinim: border: none */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 auto; /* Butonu ortalamak için */
+}
+
+.send-button:hover,
+.send-button:focus {
+    background-color: #404bbf;
+    border: none;
+}
+
+
+/* HIDING MODAL (Görünmezlik) */
+/* .is-open sınıfının yerine modalı gizleyen bir sınıf */
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
