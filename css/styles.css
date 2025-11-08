@@ -675,6 +675,7 @@ span {
 .input-group .comment-text {
   width: 100%;
   height: 120px;
+  margin-bottom: 16px;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -760,7 +761,7 @@ span {
   cursor: pointer;
 }
 /* Onay kutusu görseli */
-.form-checkbox-group .form-svg {
+.form-checkbox-group .form-svg .check-svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -781,7 +782,7 @@ input-label[type="checkbox"]:checked {
   fill: #f4f4fd;
 }
 */
-.form-checkbox-group .input-check:checked + .privacy-label .form-svg {
+.input-check:checked + .privacy-label .form-svg .check-svg {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
